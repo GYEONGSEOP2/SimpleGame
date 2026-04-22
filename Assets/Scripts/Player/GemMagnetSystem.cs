@@ -19,22 +19,6 @@ public partial struct GemMagnetSystem : ISystem
             return;
         }
 
-        #region HardCoding
-        // HardCoding
-        //if (!SystemAPI.TryGetSingletonRW<AuraWeaponData>(out var auraWeapon))
-        //{
-        //    return;
-        //}
-        //if(!SystemAPI.TryGetSingletonRW<MagicWandData>(out var magicWand))
-        //{
-        //    return;
-        //}
-        //if(!SystemAPI.TryGetSingletonRW<OrbitalSpawnerData>(out var orbitalWeapon))
-        //{
-        //    return;
-        //}
-        #endregion
-
         float3 playerPos = SystemAPI.GetComponent<LocalTransform>(playerEntity).Position;
         float deltaTime = SystemAPI.Time.DeltaTime;
         float pickupDistance = 10f;
@@ -64,22 +48,6 @@ public partial struct GemMagnetSystem : ISystem
                     playerExpData.ValueRW.RequiredExp += 5;
                     
                     ecb.AddComponent<PlayerLevelUpEventTag>(playerEntity);
-                    
-
-                    //auraWeapon.ValueRW.AuraRadius += 0.5f;
-                    //auraWeapon.ValueRW.DPS++;
-
-                    //if(magicWand.ValueRO.bulletCount < 15)
-                    //{
-                    //    magicWand.ValueRW.bulletCount += 2;
-                    //}
-                    //if(orbitalWeapon.ValueRO.Count < 5)
-                    //{
-                    //    orbitalWeapon.ValueRW.Count++;
-                    //    orbitalWeapon.ValueRW.Damage += 5;
-                    //    orbitalWeapon.ValueRW.IsSpawned = false;
-                    //}
-
                 }
 
                 ecb.DestroyEntity(entity);

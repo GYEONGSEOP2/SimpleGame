@@ -1,11 +1,14 @@
 using System;
+using Unity.Burst;
 using Unity.Entities;
 using UnityEngine;
 
 [UpdateInGroup(typeof(PresentationSystemGroup))]
+[BurstCompile]
 public partial class PlayerLevelUpBridgeSystem : SystemBase
 {
     public static Action OnLevelUpTriggered;
+    [BurstCompile]
     protected override void OnUpdate()
     {
         bool isLevelUp = false;

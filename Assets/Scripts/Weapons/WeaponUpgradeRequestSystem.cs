@@ -1,3 +1,4 @@
+using Unity.Burst;
 using Unity.Entities;
 using UnityEngine;
 
@@ -7,8 +8,10 @@ public enum WeaponType
     MagicWand = 1,
     Orbital = 2,
 }
+[BurstCompile]
 public partial struct WeaponUpgradeRequestSystem : ISystem
 {
+    [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
         var ecb = new EntityCommandBuffer(Unity.Collections.Allocator.Temp);

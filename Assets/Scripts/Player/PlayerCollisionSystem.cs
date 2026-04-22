@@ -7,7 +7,7 @@ using UnityEngine;
 [BurstCompile]
 public partial struct PlayerCollisionSystem : ISystem
 {
-    //[BurstCompile]
+    [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
         if(!SystemAPI.TryGetSingletonEntity<PlayerTag>(out Entity playerEntity))
