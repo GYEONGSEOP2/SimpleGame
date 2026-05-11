@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using Unity.Entities;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerDataAuthoring : MonoBehaviour
@@ -22,6 +23,16 @@ public class PlayerDataAuthoring : MonoBehaviour
             {
                 HitRadius = 1.5f,
                 InvincibiliyDuration = 0.5f,
+            });
+
+            AddComponent(entity, new PlayerMoveSpeed
+            {
+                Speed = 10f,
+            });
+
+            AddComponent(entity, new PlayerInputData
+            {
+                Direction = float2.zero,
             });
 
             #region Weapons
