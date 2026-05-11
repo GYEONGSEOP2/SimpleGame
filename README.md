@@ -2,7 +2,8 @@
 
 * **Engine:** Unity 6 (6000.3.12f1)
 * **Language:** C#
-* **Core Architecture (DOTS 1.0+):** * `Unity.Entities` (Data-Oriented ECS Framework)
+* **Core Architecture (DOTS):**
+* * `Unity.Entities` (Data-Oriented ECS Framework)
   * `Unity.Burst` (AOT Compiler for deeply optimized machine code)
   * `Unity.Jobs` (C# Job System for multithreading)
   * `Unity.Collections` (Unmanaged memory allocation)
